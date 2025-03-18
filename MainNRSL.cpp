@@ -15,41 +15,57 @@ int main()
 		infotype isi;
 		address P, Prec;
 
-	/* Program */
-	CreateList (&MyList);	//List sudah terbentuk, digunakan untuk memanipulasi elemen
+		/* Program */
+		CreateList (&MyList);	//List sudah terbentuk, digunakan untuk memanipulasi elemen
 	
 	//aksi mahasiswa untuk implementasi studi kasus
 	isi = 7;
 	InsVFirst(&MyList, isi);
-	Printf("");
-
+	printf("Setelah menggunakan InsVFirst\n");
+	PrintInfo(MyList);
+	
 	isi = 11;
 	InsVLast(&MyList, isi);
+	printf("Setelah menggunakan InsVLast\n");
+	PrintInfo(MyList);
 	
 	isi = 9;
 	P = Alokasi(isi);
 	Prec = Search(MyList, 7);
 	InsertAfter(&MyList, P, Prec);
-
+	printf("Setelah Menggunakan InserAfter\n");
+	PrintInfo(MyList);
+	
 	isi = 5;
 	P = Alokasi(isi);
 	InsertFirst(&MyList, P);
-
+	printf("Setelah menggunakan InsertFirst\n");
+	PrintInfo(MyList);
+	
 	isi = 13;
 	P = Alokasi(isi);
 	InsertLast(&MyList, P);
-
+	printf("Setelag menggunakan InsertLast\n");
+	PrintInfo(MyList);
+	
 	DelLast(&MyList, &P);
+	printf("Setelah menggunakan DelLast\n");
+	PrintInfo(MyList);
 	
 	DelP(&MyList, 7);
-
+	printf("Setelah menggunakan DelP\n");
+	PrintInfo(MyList);
+	
 	DelFirst(&MyList, &P);
-
+	printf("Setelah menggunakan DelFrist\n");
+	PrintInfo(MyList);
+	
 	DelOdd(&MyList);
+	printf("Setelah menggunakan DelOdd\n");
+	PrintInfo(MyList);
 
 	/* Finishing */
 	
-	PrintInfo(MyList);
 
 	//Pastikan List di Dealokasi setelah manipulasi elemen selesai
 	

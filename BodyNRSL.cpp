@@ -424,6 +424,7 @@ void PrintInfo (List L)
 			printf("%d\n", Info(P));
 			P = Next(P);
 		}while(P != Nil);
+		printf("\n\n");
 	}
 	
 	//Buatkan algoritma sesuai spesifikasi modul ini
