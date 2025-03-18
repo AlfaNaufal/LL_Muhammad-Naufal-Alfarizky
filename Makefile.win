@@ -1,0 +1,33 @@
+# Project: ADTNRSL
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = MainNRSL.o BodyNRSL.o $(RES)
+LINKOBJ  = MainNRSL.o BodyNRSL.o $(RES)
+LIBS =  -L"C:/Dev-Cpp/lib"  
+INCS =  -I"C:/Dev-Cpp/include" 
+CXXINCS =  -I"C:/Dev-Cpp/lib/gcc/mingw32/3.4.2/include"  -I"C:/Dev-Cpp/include/c++/3.4.2/backward"  -I"C:/Dev-Cpp/include/c++/3.4.2/mingw32"  -I"C:/Dev-Cpp/include/c++/3.4.2"  -I"C:/Dev-Cpp/include" 
+BIN  = ADTNRSL.exe
+CXXFLAGS = $(CXXINCS)  
+CFLAGS = $(INCS)  
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before ADTNRSL.exe all-after
+
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o "ADTNRSL.exe" $(LIBS)
+
+MainNRSL.o: MainNRSL.cpp
+	$(CPP) -c MainNRSL.cpp -o MainNRSL.o $(CXXFLAGS)
+
+BodyNRSL.o: BodyNRSL.cpp
+	$(CPP) -c BodyNRSL.cpp -o BodyNRSL.o $(CXXFLAGS)
